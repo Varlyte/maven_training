@@ -1,6 +1,6 @@
 package fr.lernejo;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 
@@ -8,22 +8,17 @@ class SampleTest {
     private static Sample test = new Sample();
 
     @Test
-    int op(Sample.Operation addition, int a, int b) {
-        return a;
-    }
-
-    @Test
     void Addition_3_and_2(){
         int a = 3, b = 2;
-        int result = op(Sample.Operation.ADD, a, b);
-        assertThat(result).as("addition of 2 + 3").isEqualTo(5);
+        int result = test.op(Sample.Operation.ADD, a, b);
+        assertThat(result).as("result of 2 + 3").isEqualTo(5);
     }
 
     @Test
     void multiplication_2_and_8(){
         int a = 2, b = 8;
-        int result = op(Sample.Operation.MULT, a, b);
-        assertThat(result).as("multiplication of 2 * 8").isEqualTo(16);
+        int result = test.op(Sample.Operation.MULT, a, b);
+        assertThat(result).as("result of 2 * 8").isEqualTo(16);
     }
 
     @Test
